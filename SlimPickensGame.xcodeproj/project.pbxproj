@@ -15,6 +15,9 @@
 		398CC6FC1B0BC0EF00EEB167 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 398CC6FB1B0BC0EF00EEB167 /* Images.xcassets */; };
 		398CC6FF1B0BC0EF00EEB167 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 398CC6FD1B0BC0EF00EEB167 /* LaunchScreen.xib */; };
 		398CC70B1B0BC0EF00EEB167 /* SlimPickensGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398CC70A1B0BC0EF00EEB167 /* SlimPickensGameTests.swift */; };
+		398CC7151B0BC14E00EEB167 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398CC7141B0BC14E00EEB167 /* MainMenu.swift */; };
+		398CC7171B0BC18300EEB167 /* GameEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398CC7161B0BC18300EEB167 /* GameEnd.swift */; };
+		398CC7191B0BC19800EEB167 /* GamePlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398CC7181B0BC19800EEB167 /* GamePlay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		398CC7041B0BC0EF00EEB167 /* SlimPickensGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlimPickensGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		398CC7091B0BC0EF00EEB167 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		398CC70A1B0BC0EF00EEB167 /* SlimPickensGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlimPickensGameTests.swift; sourceTree = "<group>"; };
+		398CC7141B0BC14E00EEB167 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		398CC7161B0BC18300EEB167 /* GameEnd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameEnd.swift; sourceTree = "<group>"; };
+		398CC7181B0BC19800EEB167 /* GamePlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,7 @@
 		398CC6E21B0BC0EF00EEB167 = {
 			isa = PBXGroup;
 			children = (
+				398CC71A1B0BC19F00EEB167 /* GameScreens */,
 				398CC6ED1B0BC0EF00EEB167 /* SlimPickensGame */,
 				398CC7071B0BC0EF00EEB167 /* SlimPickensGameTests */,
 				398CC6EC1B0BC0EF00EEB167 /* Products */,
@@ -116,6 +123,16 @@
 				398CC7091B0BC0EF00EEB167 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		398CC71A1B0BC19F00EEB167 /* GameScreens */ = {
+			isa = PBXGroup;
+			children = (
+				398CC7141B0BC14E00EEB167 /* MainMenu.swift */,
+				398CC7181B0BC19800EEB167 /* GamePlay.swift */,
+				398CC7161B0BC18300EEB167 /* GameEnd.swift */,
+			);
+			name = GameScreens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +239,9 @@
 				398CC6F51B0BC0EF00EEB167 /* GameScene.swift in Sources */,
 				398CC6F71B0BC0EF00EEB167 /* GameViewController.swift in Sources */,
 				398CC6F11B0BC0EF00EEB167 /* AppDelegate.swift in Sources */,
+				398CC7171B0BC18300EEB167 /* GameEnd.swift in Sources */,
+				398CC7151B0BC14E00EEB167 /* MainMenu.swift in Sources */,
+				398CC7191B0BC19800EEB167 /* GamePlay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

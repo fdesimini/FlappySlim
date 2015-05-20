@@ -8,15 +8,35 @@
 
 import SpriteKit
 
+var slimPickens = SKSpriteNode()
+
+
 class GameScene: SKScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!";
-        myLabel.fontSize = 65;
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
+//        let myLabel = SKLabelNode(fontNamed:"Euphemia UCAS")
+//        myLabel.text = "Yee Haw!";
+//        myLabel.fontSize = 65;
+//        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
+//        
+//        self.addChild(myLabel)
         
-        self.addChild(myLabel)
+        self.backgroundColor = UIColor.magentaColor()
+        
+        var slimTexture = SKTexture(imageNamed: "nucular_bird1")
+        var slimTexture2 = SKTexture(imageNamed: "nucular_bird2")
+        var slimTexture3 = SKTexture(imageNamed: "nucular_bird3")
+        var slimTexture4 = SKTexture(imageNamed: "nucular_bird4")
+        
+        slimPickens = SKSpriteNode(texture: slimTexture)
+        slimPickens.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
+        
+        var animation = SKAction.animateWithTextures([slimTexture, slimTexture2, slimTexture3, slimTexture4], timePerFrame: 0.15)
+        var makeSlimFlap = SKAction.repeatActionForever(animation)
+        slimPickens.runAction(makeSlimFlap)
+        
+        self.addChild(slimPickens)
+        
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
