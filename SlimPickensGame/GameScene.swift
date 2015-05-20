@@ -16,6 +16,7 @@ class GameScene: SKScene {
     var slimPickens = SKSpriteNode()
     var bg = SKSpriteNode()
     var bg2 = SKSpriteNode()
+    var bg3 = SKSpriteNode()
 
 
     override func didMoveToView(view: SKView) {
@@ -62,16 +63,26 @@ class GameScene: SKScene {
         self.addChild(ground)
         
         //add the background to the scene
-        var backgroundImage1 = SKTexture(imageNamed: "bg_depthBlurred_front")
-        var backgroundImage2 = SKTexture(imageNamed: "bg_depthBlurred_mid")
+        var backgroundImage1 = SKTexture(imageNamed: "bg_depthBlurred_back2")
+        var backgroundImage2 = SKTexture(imageNamed: "bg_depthBlurred_mid2")
+        var backgroundImage3 = SKTexture(imageNamed: "bg_depthBlurred_front")
+        
+        backgroundImage1.filteringMode = SKTextureFilteringMode.Linear
+        
+//        var backgroundImage2 = SKTexture(imageNamed: "bg_depthBlurred_mid")
         bg = SKSpriteNode(texture: backgroundImage1)
-        bg.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMinY(self.frame))
+        bg.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         bg.size.height = self.frame.height
         bg2 = SKSpriteNode(texture: backgroundImage2)
-        bg2.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMinY(self.frame))
+        bg2.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         bg2.size.height = self.frame.height
+        bg3 = SKSpriteNode(texture: backgroundImage3)
+        bg3.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        bg3.size.height = self.frame.height
+
         self.addChild(bg)
         self.addChild(bg2)
+        self.addChild(bg3)
         
     }
     

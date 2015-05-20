@@ -437,6 +437,7 @@
 				398CC7101B0BC0EF00EEB167 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		398CC7111B0BC0EF00EEB167 /* Build configuration list for PBXNativeTarget "SlimPickensGameTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +446,7 @@
 				398CC7131B0BC0EF00EEB167 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
