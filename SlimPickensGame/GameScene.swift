@@ -14,16 +14,16 @@ class GameScene: SKScene {
 // create sprite nodes
 
     var slimPickens = SKSpriteNode()
-    var bg = SKSpriteNode()
-    var bg2 = SKSpriteNode()
-    var bg3 = SKSpriteNode()
+    var background = SKSpriteNode()
+    var background2 = SKSpriteNode()
+    var background3 = SKSpriteNode()
     
 
 
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
        
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.lightGrayColor()
 
         var slimTexture = SKTexture(imageNamed: "nucular_bird1")
         var slimTexture2 = SKTexture(imageNamed: "nucular_bird2")
@@ -63,63 +63,129 @@ class GameScene: SKScene {
         
         self.addChild(ground)
         
-        //add the background texture to the scene
-        var backgroundTexture = SKTexture(imageNamed: "bg_depthBlurred_back2" )
         
-        //what does this do?
-        var bgTextureWidth = backgroundTexture?.size().width
-        println("BG width: \(bgTextureWidth)")
+        
+        //add the Front background texture to the scene
+        var backgroundTextureFront = SKTexture(imageNamed: "bg_front_ls2")
+        
+        //create a variable(s) for animating the background scene
 
-        //create a variable for animating the background scene
-
-        var moveBG = SKAction.moveByX( -(bgTextureWidth!), y: 0, duration: 2)
-        var replace = SKAction.moveByX(bgTextureWidth!, y:0, duration: 0)
-        var moveBGForever =  SKAction.repeatActionForever( SKAction.sequence([moveBG, replace]) )
-        var bgCalculation = 1 + self.frame.size.width / ( bgTextureWidth! * 2 )
+        var moveBackground = SKAction.moveByX( -backgroundTextureFront.size().width, y: 0, duration: 2)
+        var replaceBackground = SKAction.moveByX(backgroundTextureFront.size().width, y:0, duration: 0)
+        var moveBackgroundForever =  SKAction.repeatActionForever( SKAction.sequence([moveBackground, replaceBackground]) )
         
         for var i:CGFloat = 0; i < 3 ; i++ {
-            var backgroundSprite = SKSpriteNode(texture: backgroundTexture )
-            backgroundSprite.position = CGPoint(x: bgTextureWidth! / 2 + bgTextureWidth! * i, y:CGRectGetMidY(self.frame))
-            backgroundSprite.size.height = self.frame.height
+            background = SKSpriteNode(texture: backgroundTextureFront)
+            background.position = CGPoint(x: backgroundTextureFront.size().width/2 + backgroundTextureFront.size().width * i, y: CGRectGetMidY(self.frame))
+            background.size.height = self.frame.height
             
-            backgroundSprite.runAction( moveBGForever )
-            addChild( backgroundSprite )
+            background.runAction( moveBackgroundForever )
+            background.zPosition = 2
+            addChild( background )
             
         }
         
-//        for var i:CGFloat = 0; i < 3; i++ {
-//            backGround = SKSpriteNode(texture: bgImage1)
-//            backGround.position = CGPoint(x: bgImage1.size().width /2 +bgImage1.size().width *i, y:CGRectGetMidY(self.frame)
-//            backGround.size.height = self.frame.height
-//            
-//            backGround.runAction(moveBGForEver)
-//            movingObjects.addChild(backGround)
-//        
-//        }
+        //add the Mid background texture to the scene
+        var backgroundTextureMid = SKTexture(imageNamed: "bg_mid_ls2")
         
+        //create a variable(s) for animating the background scene
         
-//      background
+        var moveBackgroundMid = SKAction.moveByX( -backgroundTextureMid.size().width, y: 0, duration: 4)
+        var replaceBackgroundMid = SKAction.moveByX(backgroundTextureMid.size().width, y:0, duration: 0)
+        var moveBackgroundForeverMid =  SKAction.repeatActionForever( SKAction.sequence([moveBackgroundMid, replaceBackgroundMid]) )
         
-//        bg = SKSpriteNode(texture: bgImage1)
-//        bg.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
-//        bg.size.height = self.frame.height
-//        bg2 = SKSpriteNode(texture: bgImage2)
-//        bg2.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
-//        bg2.size.height = self.frame.height
-//        bg3 = SKSpriteNode(texture: bgImage3)
-//        bg3.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
-//        bg3.size.height = self.frame.height
-//
-//        self.addChild(bg)
-//        self.addChild(bg2)
-//        self.addChild(bg3)
+        for var i:CGFloat = 0; i < 3 ; i++ {
+            background2 = SKSpriteNode(texture: backgroundTextureMid)
+            background2.position = CGPoint(x: backgroundTextureMid.size().width/2 + backgroundTextureMid.size().width * i, y: CGRectGetMidY(self.frame))
+            background2.size.height = self.frame.height
+            
+            background2.runAction( moveBackgroundForeverMid )
+            background2.zPosition = 1
+            addChild( background2 )
+            
+        }
         
+        // add the Back background texture to the scene
+        var backgroundTextureBack = SKTexture(imageNamed: "bg_back_ls2")
+        
+        //create a variable(s) for animating the background scene
+        
+        var moveBackgroundBack = SKAction.moveByX( -backgroundTextureBack.size().width, y: 0, duration: 8)
+        var replaceBackgroundBack = SKAction.moveByX(backgroundTextureBack.size().width, y:0, duration: 0)
+        var moveBackgroundForeverBack =  SKAction.repeatActionForever( SKAction.sequence([moveBackgroundBack, replaceBackgroundBack]) )
+        
+        for var i:CGFloat = 0; i < 3 ; i++ {
+            background3 = SKSpriteNode(texture: backgroundTextureBack)
+            background3.position = CGPoint(x: backgroundTextureBack.size().width/2 + backgroundTextureBack.size().width * i, y: CGRectGetMidY(self.frame))
+            background.size.height = self.frame.height
+            
+            background3.runAction( moveBackgroundForeverBack )
+            background3.zPosition = 0
+            addChild( background3 )
+            
+        }
+        
+        //Set up a timer
+        var timer = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: Selector("makePipes"), userInfo: nil, repeats: true)
+        
+
+    }
+    
+    func makePipes() {
+        //creating a function from what we've done for pipes
+        
+        //create a gap
+        var gap = slimPickens.size.height * 2
+        //movement amount
+        var movementAmount = arc4random() % UInt32(self.frame.size.height / 2)
+        // gap offset
+        var pipeOffset = CGFloat (movementAmount) - self.frame.size.height / 4
+        // move pipes animation
+        var movePipes = SKAction.moveByX(-self.frame.size.width * 2, y: 0, duration: NSTimeInterval(self.frame.size.width / 100))
+        // remove a pipe
+        var removePipes = SKAction.removeFromParent()
+        // move and remove Pipes
+        var moveAndRemovePipes = SKAction.sequence([movePipes, removePipes])
+        //Pipe1
+        var pipe1Texture = SKTexture(imageNamed: "pipe_top")
+        var pipe1 = SKSpriteNode(texture: pipe1Texture)
+        //added action to pipe1
+        pipe1.runAction(moveAndRemovePipes)
+        pipe1.physicsBody = SKPhysicsBody(rectangleOfSize: pipe1.size)
+        pipe1.physicsBody?.dynamic = false
+        
+        pipe1.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.width, y: CGRectGetMidY(self.frame) + pipe1.size.height/2 + gap / 2 + pipeOffset)
+        
+        pipe1.zPosition = 5
+        self.addChild(pipe1)
+        
+        //Pipe2
+        var pipe2Texture = SKTexture(imageNamed: "pipe_bott")
+        var pipe2 = SKSpriteNode(texture: pipe2Texture)
+        //added action to pipe1
+        pipe2.runAction(moveAndRemovePipes)
+        pipe2.physicsBody = SKPhysicsBody(rectangleOfSize: pipe2.size)
+        pipe2.physicsBody?.dynamic = false
+        //added action to pipe
+        
+        pipe2.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.width, y: CGRectGetMidY(self.frame) - pipe2.size.height/2 - gap / 2 + pipeOffset)
+        
+        pipe2.zPosition = 6
+        
+        self.addChild(pipe2)
+        
+    }
+
+    func playSound(audio:String, shouldRepeat:Bool)
+    {
+        var sound = SKAction.playSoundFileNamed(audio, waitForCompletion: shouldRepeat)
+        runAction(sound)
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
         
-        println("Flappy is flying")
+//        println("Flappy is flying")
         slimPickens.physicsBody?.velocity = CGVectorMake(0, 0)
         slimPickens.physicsBody?.applyImpulse(CGVectorMake(0, 150))
         
