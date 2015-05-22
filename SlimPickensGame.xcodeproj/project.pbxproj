@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		394282B81B0E783C00761829 /* crickets.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 394282B71B0E783C00761829 /* crickets.mp3 */; };
 		398CC6F11B0BC0EF00EEB167 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398CC6F01B0BC0EF00EEB167 /* AppDelegate.swift */; };
 		398CC6F31B0BC0EF00EEB167 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 398CC6F21B0BC0EF00EEB167 /* GameScene.sks */; };
 		398CC6F51B0BC0EF00EEB167 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398CC6F41B0BC0EF00EEB167 /* GameScene.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		394282B71B0E783C00761829 /* crickets.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crickets.mp3; sourceTree = "<group>"; };
 		398CC6EB1B0BC0EF00EEB167 /* SlimPickensGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlimPickensGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		398CC6EF1B0BC0EF00EEB167 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		398CC6F01B0BC0EF00EEB167 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		398CC6E21B0BC0EF00EEB167 = {
 			isa = PBXGroup;
 			children = (
+				394282B71B0E783C00761829 /* crickets.mp3 */,
 				398CC71A1B0BC19F00EEB167 /* GameScreens */,
 				398CC6ED1B0BC0EF00EEB167 /* SlimPickensGame */,
 				398CC7071B0BC0EF00EEB167 /* SlimPickensGameTests */,
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				398CC6FF1B0BC0EF00EEB167 /* LaunchScreen.xib in Resources */,
+				394282B81B0E783C00761829 /* crickets.mp3 in Resources */,
 				398CC6FC1B0BC0EF00EEB167 /* Images.xcassets in Resources */,
 				398CC6F31B0BC0EF00EEB167 /* GameScene.sks in Resources */,
 				398CC6FA1B0BC0EF00EEB167 /* Main.storyboard in Resources */,

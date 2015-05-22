@@ -13,17 +13,25 @@ class GameScene: SKScene {
 
 // create sprite nodes
 
+    
+    var newColour = UIColor(red: 242/255, green: 238/255, blue: 135/255, alpha: 1.0)
+    
     var slimPickens = SKSpriteNode()
     var background = SKSpriteNode()
     var background2 = SKSpriteNode()
     var background3 = SKSpriteNode()
     
+    //Collision and Contact Category
+    let slimPickensCategory:UInt32 = 0x1 << 0
+    let groundCategory:UInt32 = 0x1 << 1
+    let gapCategory:UInt32 = 0x1 << 2
+    let pipeCategory:UInt32 = 0x1 << 3
 
 
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
        
-        self.backgroundColor = UIColor.lightGrayColor()
+        self.backgroundColor = newColour
 
         var slimTexture = SKTexture(imageNamed: "nucular_bird1")
         var slimTexture2 = SKTexture(imageNamed: "nucular_bird2")
@@ -66,11 +74,11 @@ class GameScene: SKScene {
         
         
         //add the Front background texture to the scene
-        var backgroundTextureFront = SKTexture(imageNamed: "bg_front_ls2")
+        var backgroundTextureFront = SKTexture(imageNamed: "bg_front_blue")
         
         //create a variable(s) for animating the background scene
 
-        var moveBackground = SKAction.moveByX( -backgroundTextureFront.size().width, y: 0, duration: 2)
+        var moveBackground = SKAction.moveByX( -backgroundTextureFront.size().width, y: 0, duration: 10)
         var replaceBackground = SKAction.moveByX(backgroundTextureFront.size().width, y:0, duration: 0)
         var moveBackgroundForever =  SKAction.repeatActionForever( SKAction.sequence([moveBackground, replaceBackground]) )
         
@@ -86,11 +94,11 @@ class GameScene: SKScene {
         }
         
         //add the Mid background texture to the scene
-        var backgroundTextureMid = SKTexture(imageNamed: "bg_mid_ls2")
+        var backgroundTextureMid = SKTexture(imageNamed: "bg_mid_brown")
         
         //create a variable(s) for animating the background scene
         
-        var moveBackgroundMid = SKAction.moveByX( -backgroundTextureMid.size().width, y: 0, duration: 4)
+        var moveBackgroundMid = SKAction.moveByX( -backgroundTextureMid.size().width, y: 0, duration: 8)
         var replaceBackgroundMid = SKAction.moveByX(backgroundTextureMid.size().width, y:0, duration: 0)
         var moveBackgroundForeverMid =  SKAction.repeatActionForever( SKAction.sequence([moveBackgroundMid, replaceBackgroundMid]) )
         
@@ -106,11 +114,11 @@ class GameScene: SKScene {
         }
         
         // add the Back background texture to the scene
-        var backgroundTextureBack = SKTexture(imageNamed: "bg_back_ls2")
+        var backgroundTextureBack = SKTexture(imageNamed: "bg_back_purple")
         
         //create a variable(s) for animating the background scene
         
-        var moveBackgroundBack = SKAction.moveByX( -backgroundTextureBack.size().width, y: 0, duration: 8)
+        var moveBackgroundBack = SKAction.moveByX( -backgroundTextureBack.size().width, y: 0, duration: 12)
         var replaceBackgroundBack = SKAction.moveByX(backgroundTextureBack.size().width, y:0, duration: 0)
         var moveBackgroundForeverBack =  SKAction.repeatActionForever( SKAction.sequence([moveBackgroundBack, replaceBackgroundBack]) )
         
@@ -147,7 +155,7 @@ class GameScene: SKScene {
         // move and remove Pipes
         var moveAndRemovePipes = SKAction.sequence([movePipes, removePipes])
         //Pipe1
-        var pipe1Texture = SKTexture(imageNamed: "pipe_top")
+        var pipe1Texture = SKTexture(imageNamed: "pipe_top_green")
         var pipe1 = SKSpriteNode(texture: pipe1Texture)
         //added action to pipe1
         pipe1.runAction(moveAndRemovePipes)
@@ -160,7 +168,7 @@ class GameScene: SKScene {
         self.addChild(pipe1)
         
         //Pipe2
-        var pipe2Texture = SKTexture(imageNamed: "pipe_bott")
+        var pipe2Texture = SKTexture(imageNamed: "pipe_bott_green")
         var pipe2 = SKSpriteNode(texture: pipe2Texture)
         //added action to pipe1
         pipe2.runAction(moveAndRemovePipes)
