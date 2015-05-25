@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		394282B81B0E783C00761829 /* crickets.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 394282B71B0E783C00761829 /* crickets.mp3 */; };
 		398CC6F11B0BC0EF00EEB167 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398CC6F01B0BC0EF00EEB167 /* AppDelegate.swift */; };
 		398CC6F31B0BC0EF00EEB167 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 398CC6F21B0BC0EF00EEB167 /* GameScene.sks */; };
 		398CC6F51B0BC0EF00EEB167 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398CC6F41B0BC0EF00EEB167 /* GameScene.swift */; };
@@ -18,6 +19,7 @@
 		398CC7151B0BC14E00EEB167 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398CC7141B0BC14E00EEB167 /* MainMenu.swift */; };
 		398CC7171B0BC18300EEB167 /* GameEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398CC7161B0BC18300EEB167 /* GameEnd.swift */; };
 		398CC7191B0BC19800EEB167 /* GamePlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398CC7181B0BC19800EEB167 /* GamePlay.swift */; };
+		39F59BD11B0FB9F00076CAD4 /* banjo_picken.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 39F59BD01B0FB9F00076CAD4 /* banjo_picken.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		394282B71B0E783C00761829 /* crickets.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crickets.mp3; sourceTree = "<group>"; };
 		398CC6EB1B0BC0EF00EEB167 /* SlimPickensGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlimPickensGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		398CC6EF1B0BC0EF00EEB167 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		398CC6F01B0BC0EF00EEB167 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 		398CC7141B0BC14E00EEB167 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		398CC7161B0BC18300EEB167 /* GameEnd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameEnd.swift; sourceTree = "<group>"; };
 		398CC7181B0BC19800EEB167 /* GamePlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlay.swift; sourceTree = "<group>"; };
+		39F59BD01B0FB9F00076CAD4 /* banjo_picken.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = banjo_picken.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 		398CC6E21B0BC0EF00EEB167 = {
 			isa = PBXGroup;
 			children = (
+				39F59BD01B0FB9F00076CAD4 /* banjo_picken.mp3 */,
+				394282B71B0E783C00761829 /* crickets.mp3 */,
 				398CC71A1B0BC19F00EEB167 /* GameScreens */,
 				398CC6ED1B0BC0EF00EEB167 /* SlimPickensGame */,
 				398CC7071B0BC0EF00EEB167 /* SlimPickensGameTests */,
@@ -216,7 +222,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				398CC6FF1B0BC0EF00EEB167 /* LaunchScreen.xib in Resources */,
+				394282B81B0E783C00761829 /* crickets.mp3 in Resources */,
 				398CC6FC1B0BC0EF00EEB167 /* Images.xcassets in Resources */,
+				39F59BD11B0FB9F00076CAD4 /* banjo_picken.mp3 in Resources */,
 				398CC6F31B0BC0EF00EEB167 /* GameScene.sks in Resources */,
 				398CC6FA1B0BC0EF00EEB167 /* Main.storyboard in Resources */,
 			);
@@ -437,6 +445,7 @@
 				398CC7101B0BC0EF00EEB167 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		398CC7111B0BC0EF00EEB167 /* Build configuration list for PBXNativeTarget "SlimPickensGameTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +454,7 @@
 				398CC7131B0BC0EF00EEB167 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
