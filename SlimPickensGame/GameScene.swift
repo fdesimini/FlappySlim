@@ -31,16 +31,21 @@ class GameScene: SKScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
        
+        // set background colour
         self.backgroundColor = newColour
+        
+        //call music function
+        playSound("banjo_picken.mp3", shouldRepeat: true)
+        
 
-        var slimTexture = SKTexture(imageNamed: "nucular_bird1")
-        var slimTexture2 = SKTexture(imageNamed: "nucular_bird2")
-        var slimTexture3 = SKTexture(imageNamed: "nucular_bird3")
-        var slimTexture4 = SKTexture(imageNamed: "nucular_bird4")
+        var slimTexture = SKTexture(imageNamed: "slim1")
+        var slimTexture2 = SKTexture(imageNamed: "slim2")
+        var slimTexture3 = SKTexture(imageNamed: "slim3")
+//        var slimTexture4 = SKTexture(imageNamed: "nucular_bird4")
  
         // create variable for animation and create action (SKAction)
         
-        var animation = SKAction.animateWithTextures([slimTexture, slimTexture2, slimTexture3, slimTexture4], timePerFrame: 0.15)
+        var animation = SKAction.animateWithTextures([slimTexture, slimTexture2, slimTexture3], timePerFrame: 0.15)
         var makeSlimFlap = SKAction.repeatActionForever(animation)
         
         
@@ -77,7 +82,7 @@ class GameScene: SKScene {
         var backgroundTextureFront = SKTexture(imageNamed: "bg_front_blue")
         
         //create a variable(s) for animating the background scene
-
+        // Move the backround texture
         var moveBackground = SKAction.moveByX( -backgroundTextureFront.size().width, y: 0, duration: 10)
         var replaceBackground = SKAction.moveByX(backgroundTextureFront.size().width, y:0, duration: 0)
         var moveBackgroundForever =  SKAction.repeatActionForever( SKAction.sequence([moveBackground, replaceBackground]) )
@@ -155,7 +160,7 @@ class GameScene: SKScene {
         // move and remove Pipes
         var moveAndRemovePipes = SKAction.sequence([movePipes, removePipes])
         //Pipe1
-        var pipe1Texture = SKTexture(imageNamed: "pipe_top_green")
+        var pipe1Texture = SKTexture(imageNamed: "pipe_green_top")
         var pipe1 = SKSpriteNode(texture: pipe1Texture)
         //added action to pipe1
         pipe1.runAction(moveAndRemovePipes)
@@ -168,7 +173,7 @@ class GameScene: SKScene {
         self.addChild(pipe1)
         
         //Pipe2
-        var pipe2Texture = SKTexture(imageNamed: "pipe_bott_green")
+        var pipe2Texture = SKTexture(imageNamed: "pipe_green_bott")
         var pipe2 = SKSpriteNode(texture: pipe2Texture)
         //added action to pipe1
         pipe2.runAction(moveAndRemovePipes)
@@ -184,6 +189,7 @@ class GameScene: SKScene {
         
     }
 
+    // Add sound function from SK
     func playSound(audio:String, shouldRepeat:Bool)
     {
         var sound = SKAction.playSoundFileNamed(audio, waitForCompletion: shouldRepeat)
